@@ -33,7 +33,7 @@ public class Timer extends Actor
 
     private void updateTimer()
     {
-        GreenfootImage img = new GreenfootImage("Time: " + (timeLeft/60), 24, Color.BLACK, new Color(0, 0, 0, 0));
+        GreenfootImage img = new GreenfootImage("Time: " + (timeLeft/60), 24, Color.WHITE, new Color(0, 0, 0, 0));
         setImage(img);
     }
     

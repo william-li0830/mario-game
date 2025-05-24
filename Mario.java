@@ -30,10 +30,12 @@ public class Mario extends Actor
         {new GreenfootImage("Left1.png"),
             new GreenfootImage("Left2.png"),
             new GreenfootImage("Left3.png")};
+            
+    private static int FULL_HEALTH = 3;
 
     // Assorted variables needed for logic in this class    
     private int frame;
-    private int health = 4;
+    private int health;
     private int actCounter; 
     private int skipRate;
     private int speed;
@@ -46,6 +48,7 @@ public class Mario extends Actor
 
     public Mario()
     {
+        health = FULL_HEALTH;
         frame = 0;
         speed = 4;
         animation = MarioIdle;
@@ -186,13 +189,18 @@ public class Mario extends Actor
     {
         return health;
     }
+    
+    public int getFullHealth()
+    {
+        return FULL_HEALTH;
+    }
 
     // Code to gather check points for Mario's feet
     private void bottomChecker()
     {
         // Information about Mario's dimensions to process collisions
         int marioHeight = getImage().getHeight();
-        int yDistance = marioHeight/2;
+        int yDistance = marioHeight/2 + 1;
         Actor ground = getOneObjectAtOffset(0,yDistance,Platform.class);
         if(ground == null)
         {
@@ -301,9 +309,11 @@ public class Mario extends Actor
         if(health <=0)
         {
             health = 0;
+        } else {
+            shrinkMario();
+            Greenfoot.playSound("MarioShrinking.mp3");
         }
-        shrinkMario();
-        Greenfoot.playSound("MarioShrinking.mp3");
+
         updateHeart();
     }
 

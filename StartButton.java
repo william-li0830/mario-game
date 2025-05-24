@@ -14,7 +14,7 @@ public class StartButton extends Actor
      */
     public StartButton()
     {
-        getImage().scale(120, 60);
+        getImage().scale(150, 75);
     }
 
     public void act()

@@ -9,6 +9,8 @@ public class MyWorld extends greenfoot.World
 {
     private Scoreboard scoreboard;
     private Mario mario;
+    private boolean gameOver;
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,11 +22,7 @@ public class MyWorld extends greenfoot.World
         bg.scale(600, 400);
         setBackground(bg);
         prepare();
-    }
 
-    public void act()
-    {
-        checkTimer();
     }
 
     /**
@@ -33,14 +31,16 @@ public class MyWorld extends greenfoot.World
      */
     private void prepare()
     {
-        addObject(new Mario(),235,356);
-
+        mario = new Mario();
+        addObject(mario,235,356);
+        HealthHearts(mario.getFullHealth(), 20,20);
+        
         scoreboard = new Scoreboard(0);
         addObject(scoreboard, getWidth() - 70, 20);
 
         addFloor();
 
-        addObject(new Timer(), 300,50);
+        addObject(new Timer(), 300,20);
 
         //addObject(new Bush(), 400,50);
         //addObject(new Bush(), 400,40);
@@ -54,10 +54,20 @@ public class MyWorld extends greenfoot.World
         CoinBlocks(300, getHeight()/3*2);
         CoinBlocks(500, getHeight()/5*3);
 
-        HealthHearts(20,20);
 
         // addObject(new Goomba(), 300,350);
         addObject(new Koopa(), 428,356);
+    }
+
+    public void act()
+    {
+        checkTimer();
+
+        if(mario.getHealth() <= 0 && !gameOver)
+        {
+            gameOver = true;
+            gameOver();
+        }
     }
 
     // This method auto-generated a floor for the entire level, no matter how long it is! Wohoo generalization :)
@@ -96,11 +106,11 @@ public class MyWorld extends greenfoot.World
         }
     }
 
-    public void HealthHearts(int xStart, int yStart)
+    public void HealthHearts(int number, int xStart, int yStart)
     {  
         HealthHeart healthHeart = new HealthHeart();
         int heartWidth = healthHeart.getImage().getWidth() + 2;
-        for(int i = 0; i < 4; i++) 
+        for(int i = 0; i < number; i++) 
         {
             addObject(new HealthHeart(), xStart+(i*heartWidth),yStart);
         }
@@ -115,33 +125,17 @@ public class MyWorld extends greenfoot.World
         }
     }
 
-    private void GameOver() 
+    private void gameOver() 
     {
         int centerX = getWidth()/2;
         int centerY = getHeight()/2;
 
         removeObject(mario);
-
         Greenfoot.playSound("GAMEOVER.wav");
 
-        //GreenfootImage gameover = new GreenfootImage("GameOver.png");
-        //addObject(gameover,centerX, centerY);
+        addObject(new GameOver(),centerX, centerY - 50);
+        addObject(new StartButton(), centerX, centerY + 60);
 
-        //or
-
-        Text gameoverText = new Text("GAME OVER", Color.RED, 100);
-        addObject(gameoverText,centerX, centerY);
-
-        addObject(new RestartButton(), centerX, centerY + 85);
-
-        Text scoreText = new Text("Score: " + scoreboard.getScore(), Color.BLACK,70);
-        addObject(scoreText,centerX, centerY - 80);
-
-    }
-
-    public void restartGame() 
-    {
-        Greenfoot.setWorld(new MyWorld()); // Restarts the game
     }
 
     public Scoreboard getScoreboard()
