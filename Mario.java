@@ -30,7 +30,7 @@ public class Mario extends Actor
         {new GreenfootImage("Left1.png"),
             new GreenfootImage("Left2.png"),
             new GreenfootImage("Left3.png")};
-            
+
     private static int FULL_HEALTH = 3;
 
     // Assorted variables needed for logic in this class    
@@ -189,10 +189,14 @@ public class Mario extends Actor
     {
         return health;
     }
-    
+
     public int getFullHealth()
     {
         return FULL_HEALTH;
+    }
+
+    public boolean isFalling() {
+        return (gravity > 0) && !grounded;
     }
 
     // Code to gather check points for Mario's feet
@@ -290,16 +294,31 @@ public class Mario extends Actor
 
     private void checkEnemies()
     {
-        boolean isTouching = isTouching(Enemy.class);
+        Object enemy = getOneIntersectingObject(Enemy.class);
 
-        if (isHit != isTouching)
+        if (enemy != null)
         {
-            isHit = isTouching;
+            if (!isHit) {
+                isHit = true;
 
-            if (isHit)
-            {
-                takeDamage();
+                if (enemy instanceof Koopa)
+                {
+                    takeDamage();
+                } else if (enemy instanceof Goomba)
+                {
+                    Goomba goomba = (Goomba) enemy;
+                    if (isFalling())
+                    {
+                        goomba.flattenGoomba();
+                    } else if (!goomba.isFlattened())
+                    {
+                        takeDamage();
+                    }
+                }
             }
+
+        } else {
+            isHit = false;
         }
     }
 

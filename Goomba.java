@@ -11,13 +11,12 @@ public class Goomba extends Enemy
      * Act - do whatever the Goomba wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     
+
     private static int SPEED = 1;
     private static int SCORE = 3;
     private boolean isTouched = false;
-    
-    private int health = 10;
-    
+    private int flattenTimer = -1; // -1 means not flattened yet
+
     private GreenfootImage goombaLeft;
     private GreenfootImage goombaRight;
 
@@ -30,48 +29,38 @@ public class Goomba extends Enemy
 
     public void act()
     {
-        if (isTouching(Mario.class) && !isTouched)
+        super.act();
+
+        if (flattenTimer >= 0)
         {
-            flattenGoomba();
-            isTouched = true;
-            health--;
+            flattenTimer++;
+            if (flattenTimer >= 100) // 2 seconds
+            {
+                getWorld().removeObject(this);
+            }
         }
-        else if (!isTouched)
-        {
-            moveGoomba();
-        }
-        
-        if(health <= 0)
-        {
-            getWorld().removeObject(this);
-        }
-        
-        if(health < 10)
-        {
-            MyWorld myWorld = (MyWorld) getWorld();
-            Scoreboard scoreboard = myWorld.getScoreboard();
-            scoreboard.update(SCORE);
-        }
+
+        checkSpeed();
     }
 
-    private void moveGoomba()
+    public void checkSpeed()
     {
-        if (speed < 0)
-        {
-            setImage(goombaLeft);
-            setLocation(getX() - speed, getY());
-        }
-        else
-        {
-            setImage(goombaRight);
-            setLocation(getX() + speed, getY());
-        }
+        this.speed = super.getSpeed();
     }
 
-    private void flattenGoomba()
+    public void flattenGoomba()
     {
         GreenfootImage flattened = new GreenfootImage(getImage());
         flattened.scale(flattened.getWidth(), flattened.getHeight() / 2); // shrink vertically
         setImage(flattened);
+        flattenTimer = 0; // start timer
+
+        Scoreboard scoreboard = ((MyWorld)getWorld()).getScoreboard();
+        scoreboard.update(SCORE);
+    }
+
+    public boolean isFlattened()
+    {
+        return flattenTimer > 0;
     }
 }

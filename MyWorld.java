@@ -55,7 +55,7 @@ public class MyWorld extends greenfoot.World
         CoinBlocks(500, getHeight()/5*3);
 
 
-        // addObject(new Goomba(), 300,350);
+        addObject(new Goomba(), 100, 370);
         addObject(new Koopa(), 428,356);
     }
 
@@ -132,6 +132,8 @@ public class MyWorld extends greenfoot.World
 
         removeObject(mario);
         Greenfoot.playSound("GAMEOVER.wav");
+        Timer t = (Timer) getObjects(Timer.class).get(0);
+        t.stopTimer();
 
         addObject(new GameOver(),centerX, centerY - 50);
         addObject(new StartButton(), centerX, centerY + 60);
