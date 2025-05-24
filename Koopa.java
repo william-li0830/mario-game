@@ -1,49 +1,47 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Koopa here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *Code for Koopa's movement and animation.
+ * @author(William Li) 
+ * @version (05/16/25)
  */
 public class Koopa extends Enemy
 {
     private static GreenfootImage[] LEFT = 
-                {new GreenfootImage("KoopaLeft0.png"),
-                new GreenfootImage("KoopaLeft1.png"),
-                new GreenfootImage("KoopaLeft2.png")};
-                
-    private static GreenfootImage[] RIGHT = 
-                {new GreenfootImage("KoopaRight0.png"),
-                new GreenfootImage("KoopaRight1.png"),
-                new GreenfootImage("KoopaRight2.png")};            
-    
-                
-    private static GreenfootImage[] LEFT_SHELL = 
-                {new GreenfootImage("LeftShell0.png"),
-                new GreenfootImage("LeftShell1.png"),
-                new GreenfootImage("LeftShell2.png"),
-                new GreenfootImage("LeftShell3.png")};
-                
-    private static GreenfootImage[] RIGHT_SHELL = 
-                {new GreenfootImage ("RightShell0.png"),
-                 new GreenfootImage ("RightShell1.png"),
-                 new GreenfootImage("RightShell2.png"),
-                 new GreenfootImage("RightShell3.png")};
-    
-    private GreenfootImage[] animation;
-    private int speed, skipRate, actCounter, frame;
+        {new GreenfootImage("KoopaLeft0.png"),
+            new GreenfootImage("KoopaLeft1.png"),
+            new GreenfootImage("KoopaLeft2.png")};
 
+    private static GreenfootImage[] RIGHT = 
+        {new GreenfootImage("KoopaRight0.png"),
+            new GreenfootImage("KoopaRight1.png"),
+            new GreenfootImage("KoopaRight2.png")};            
+
+    private static GreenfootImage[] LEFT_SHELL = 
+        {new GreenfootImage("LeftShell0.png"),
+            new GreenfootImage("LeftShell1.png"),
+            new GreenfootImage("LeftShell2.png"),
+            new GreenfootImage("LeftShell3.png")};
+
+    private static GreenfootImage[] RIGHT_SHELL = 
+        {new GreenfootImage ("RightShell0.png"),
+            new GreenfootImage ("RightShell1.png"),
+            new GreenfootImage("RightShell2.png"),
+            new GreenfootImage("RightShell3.png")};
+
+    private static int SPEED = 2;
+    private GreenfootImage[] animation;
     // Variables to deal with contacting Mario
     private boolean isTouched;
-    private int touchTimer;
-    
+
     // Variable for jumping
     private int jumpTimer;
-    
+    private int touchTimer;
+    private int speed, skipRate, actCounter, frame;
+
     public Koopa()
     {
-        super(2);
+        super(SPEED);
         animation = LEFT;
         actCounter = 0;
         skipRate = 20;
@@ -53,7 +51,7 @@ public class Koopa extends Enemy
         touchTimer = 0;
         jumpTimer = 0;
     }
-    
+
     public void act()
     {
         super.act();
@@ -64,12 +62,12 @@ public class Koopa extends Enemy
         updateAnimations();
         jumper();
     }
-    
+
     public void checkSpeed()
     {
         this.speed = super.getSpeed();
     }
-    
+
     // The code that allows the Koopa go to into its shell after being touched by Mario and then, after some time, pop out again!
     public void checkTouched()
     {
@@ -89,7 +87,7 @@ public class Koopa extends Enemy
             isTouched = false;
         }  
     }
-    
+
     public void setAnimation()
     {
         // Animations for left motion
@@ -113,18 +111,18 @@ public class Koopa extends Enemy
             }
             else if(!isTouched && animation != RIGHT)
             {
-               processAnimation(RIGHT,20); 
+                processAnimation(RIGHT,20); 
             } 
         }
     }
-   
+
     public void processAnimation(GreenfootImage[] anim,int skip)
     {
         this.animation = anim;
         this.skipRate = skip;
         frame = 0;
     }
-    
+
     public void updateAnimations()
     {
         if(animate())
@@ -137,12 +135,12 @@ public class Koopa extends Enemy
             frame++;
         }
     }
-    
+
     public boolean animate()
     {
         return actCounter % skipRate == 0;
     }
-    
+
     public void jumper()
     {
         jumpTimer++;

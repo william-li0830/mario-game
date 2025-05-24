@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Timer
+comment0.text=\r\n\ Code\ for\ game\ timer.\r\n\ @author\ (William\ Li)\ \r\n\ @version\ (05/16/25)\r\n
+comment1.params=
+comment1.target=Timer()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ updateTimer()
+comment4.params=
+comment4.target=void\ resetTimer()
+comment5.params=
+comment5.target=int\ getTimeLeft()
+comment6.params=
+comment6.target=void\ showTimesUp()
+numComments=7

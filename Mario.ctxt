@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Mario
+comment0.text=\r\n\ This\ class\ handles\ Mario's\ animations,\ movement,\ and\ interactions.\r\n\ Mario\ loses\ health\ when\ touching\ a\ Koopa\ or\ a\ Goomba,\ and\ the\ game\ ends\ if\ health\ reaches\ 0.\r\n\ @author(William\ Li)\ \r\n\ @version\ (05/16/25)\r\n
 comment1.params=
 comment1.target=Mario()
 comment10.params=

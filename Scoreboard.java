@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scoreboard here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Updates the score.
+ * @author (William Li) 
+ * @version (05/16/25)
  */
 public class Scoreboard extends Actor
 {
@@ -15,9 +14,9 @@ public class Scoreboard extends Actor
     public Scoreboard(int s)
     {
         this.score = s;
-        this.text = "SCORE = " + score;
+        this.text = "Score = " + score;
         fontSize = 25;
-        textColor = Color.WHITE;
+        textColor = Color.BLACK;
         backColor = new Color(0, 0, 0, 0);
         updateImage();
     }
