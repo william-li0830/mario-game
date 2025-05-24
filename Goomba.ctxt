@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Goomba
+comment0.text=\r\n\ Code\ Goomba's\ movement.\r\n\ @author\ (William\ Li)\ \r\n\ @version\ (05/16/25)\r\n
+comment1.params=
+comment1.target=Goomba()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ moveGoomba()
+comment4.params=
+comment4.target=void\ flattenGoomba()
+numComments=5

@@ -37,7 +37,7 @@ public class Koopa extends Enemy
     // Variable for jumping
     private int jumpTimer;
     private int touchTimer;
-    private int speed, skipRate, actCounter, frame;
+    private int skipRate, actCounter, frame;
 
     public Koopa()
     {
@@ -46,7 +46,6 @@ public class Koopa extends Enemy
         actCounter = 0;
         skipRate = 20;
         frame = 0;
-        speed = -2;
         isTouched = false;
         touchTimer = 0;
         jumpTimer = 0;

@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+
 /**
  * This class handles Mario's animations, movement, and interactions.
  * Mario loses health when touching a Koopa or a Goomba, and the game ends if health reaches 0.
@@ -31,15 +33,17 @@ public class Mario extends Actor
 
     // Assorted variables needed for logic in this class    
     private int frame;
+    private int health = 4;
     private int actCounter; 
     private int skipRate;
     private int speed;
+
     private double gravity, gForce;
     private boolean jumpReady = true, airControl = true, grounded, idler = true;
-    
+    private boolean isHit;
+
     private GreenfootImage[] animation;
-    
-    // A constructor to set up the initial state of our variables
+
     public Mario()
     {
         frame = 0;
@@ -67,9 +71,11 @@ public class Mario extends Actor
         bottomChecker();
         platformAbove();
         checkRightWalls();
-        checkLeftWalls();        
+        checkLeftWalls();
+
+        checkEnemies();
     }    
-    
+
     // Code to trigger animations based off of key presses (direction)
     private void marioAnimator()
     {
@@ -175,7 +181,12 @@ public class Mario extends Actor
             gravity += gForce;           
         }
     }
-    
+
+    public int getHealth()
+    {
+        return health;
+    }
+
     // Code to gather check points for Mario's feet
     private void bottomChecker()
     {
@@ -240,6 +251,7 @@ public class Mario extends Actor
             stopByRightWall(rightWall);
         }
     }
+
     // Ensures Mario's collisiont with the right wall is smooth and glitchless
     private void stopByRightWall(Actor rightWall)
     {
@@ -267,6 +279,49 @@ public class Mario extends Actor
         int newX = leftWall.getX() + (wallWidth + getImage().getWidth())/2;
         setLocation(newX + 5, getY());
     }    
+
+    private void checkEnemies()
+    {
+        boolean isTouching = isTouching(Enemy.class);
+
+        if (isHit != isTouching)
+        {
+            isHit = isTouching;
+
+            if (isHit)
+            {
+                takeDamage();
+            }
+        }
+    }
+
+    private void takeDamage()
+    {
+        health--;
+        if(health <=0)
+        {
+            health = 0;
+        }
+        shrinkMario();
+        Greenfoot.playSound("MarioShrinking.mp3");
+        updateHeart();
+    }
+
+    private void updateHeart()
+    {
+        List<HealthHeart> hearts = getWorld().getObjects(HealthHeart.class); 
+
+        if(hearts.size() > health)
+        {
+            getWorld().removeObject(hearts.get(hearts.size() - 1));
+        }
+    }
+
+    private void shrinkMario()
+    {
+        GreenfootImage flattened = new GreenfootImage(getImage());
+        flattened.scale(flattened.getWidth(), flattened.getHeight() / 2); // shrink vertically
+        setImage(flattened);
+    }
+
 }
-
-

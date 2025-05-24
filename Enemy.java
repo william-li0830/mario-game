@@ -7,32 +7,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
-    private double gravity,gForce;
-    private int speed = 1;
-    
+
     public boolean grounded = true;
     public boolean jumpReady = true;
     public boolean airControl = true;    
-    
+
+    protected int speed = 1;
+    private double gravity,gForce;
+
     public Enemy(int speed)
     {
         this.speed = -speed;
         gravity = 1;
         gForce = .1;
     }
-    
+
     public void act() 
     {
         mover();
         applyGravity();
-        
+
         // 4-way collision detection management
         bottomChecker();
         platformAbove();
         checkRightWalls();
         checkLeftWalls();          
     }    
-    
+
     public void applyGravity()
     {
         int koopaHeight = getImage().getHeight();
@@ -49,7 +50,7 @@ public class Enemy extends Actor
             gravity += gForce;
         }
     }
-    
+
     public void mover()
     {
         if(edgeChecker() || platformChecker())
@@ -58,28 +59,28 @@ public class Enemy extends Actor
         }
         setLocation(getX()+speed,getY());
     }
-    
+
     public Boolean edgeChecker()
     {
         return isAtEdge();
     }
-    
+
     public Boolean platformChecker()
     {
         return isTouching(Platform.class);
     }
-    
+
     public int getSpeed()
     {
         return speed;
     }
-    
+
     public void setGravity(int gravity)
     {
         this.gravity = gravity;
     }
-    
-        // Code to gather check points for Mario's feet
+
+    // Code to gather check points for Mario's feet
     private void bottomChecker()
     {
         // Information about Mario's dimensions to process collisions
@@ -106,7 +107,7 @@ public class Enemy extends Actor
         jumpReady = true;
         airControl = true;
     }
-    
+
     // Checks to see if there is a Platform above Mario and, if so, stops him from moving through it
     private void platformAbove()
     {
@@ -126,7 +127,7 @@ public class Enemy extends Actor
         int newY = ceiling.getY() + (ceilingHeight + getImage().getHeight())/2;
         setLocation(getX(), newY);
     }
-    
+
     // Checks Mario's right side for any Platforms he might collide with
     private void checkRightWalls()
     {
@@ -144,9 +145,9 @@ public class Enemy extends Actor
         int wallWidth = rightWall.getImage().getWidth();
         int newX = rightWall.getX() - (wallWidth + getImage().getWidth())/2;
         setLocation(newX - 5, getY());
- 
+
     }
-    
+
     // Checks Mario'sleftt side for any Platforms he might collide wit
     private void checkLeftWalls()
     {

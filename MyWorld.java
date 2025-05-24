@@ -34,10 +34,10 @@ public class MyWorld extends greenfoot.World
     private void prepare()
     {
         addObject(new Mario(),235,356);
-        
+
         scoreboard = new Scoreboard(0);
         addObject(scoreboard, getWidth() - 70, 20);
-        
+
         addFloor();
 
         addObject(new Timer(), 300,50);
@@ -54,8 +54,10 @@ public class MyWorld extends greenfoot.World
         CoinBlocks(300, getHeight()/3*2);
         CoinBlocks(500, getHeight()/5*3);
 
+        HealthHearts(20,20);
+
         // addObject(new Goomba(), 300,350);
-        // addObject(new Koopa(), 428,356);
+        addObject(new Koopa(), 428,356);
     }
 
     // This method auto-generated a floor for the entire level, no matter how long it is! Wohoo generalization :)
@@ -75,11 +77,11 @@ public class MyWorld extends greenfoot.World
     // A modular method designed to add blocks in clumps of 3 whever requested
     public void CoinBlocks(int xStart, int yStart)
     {
-        CoinBlock cb = new CoinBlock();
-        int blockWidth = cb.getImage().getWidth();
-        for(int a = 0; a < 3; a++)
+        CoinBlock coinBlock = new CoinBlock();
+        int blockWidth = coinBlock.getImage().getWidth();
+        for(int i = 0; i < 3; i++)
         {
-            addObject(new CoinBlock(), xStart+(a*blockWidth), yStart);
+            addObject(new CoinBlock(), xStart+(i*blockWidth), yStart);
         }
     }
 
@@ -88,9 +90,19 @@ public class MyWorld extends greenfoot.World
     {
         StoneBlock stoneBlock = new StoneBlock();
         int blockWidth = stoneBlock.getImage().getWidth();
-        for(int a = 0; a < 3; a++)
+        for(int i = 0; i < 3; i++)
         {
-            addObject(new StoneBlock(), xStart+(a*blockWidth), yStart);
+            addObject(new StoneBlock(), xStart+(i*blockWidth), yStart);
+        }
+    }
+
+    public void HealthHearts(int xStart, int yStart)
+    {  
+        HealthHeart healthHeart = new HealthHeart();
+        int heartWidth = healthHeart.getImage().getWidth() + 2;
+        for(int i = 0; i < 4; i++) 
+        {
+            addObject(new HealthHeart(), xStart+(i*heartWidth),yStart);
         }
     }
 
