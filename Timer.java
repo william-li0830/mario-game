@@ -55,10 +55,9 @@ public class Timer extends Actor
     {
         return timeLeft;
     }
-
-    private void showTimesUp()
+    
+    public boolean isRunning()
     {
-        getWorld().showText("TIME'S UP!", getWorld().getWidth()/2, getWorld().getHeight()/2);
+        return isRunning;
     }
-
 }

@@ -9,6 +9,8 @@ public class MyWorld extends greenfoot.World
 {
     private Scoreboard scoreboard;
     private Mario mario;
+    private Text timesUpText;
+    
     private boolean gameOver;
 
     /**
@@ -22,6 +24,8 @@ public class MyWorld extends greenfoot.World
         bg.scale(600, 400);
         setBackground(bg);
         prepare();
+        
+        timesUpText = new Text("TIME'S UP!", Color.RED, 100);
 
     }
 
@@ -119,11 +123,16 @@ public class MyWorld extends greenfoot.World
     private void checkTimer() {
         if (!getObjects(Timer.class).isEmpty()) {
             Timer t = (Timer) getObjects(Timer.class).get(0);
-            if (t.getTimeLeft() == 0) {
-                showText("TIME'S UP!", getWidth() / 2, getHeight() / 2);
+            if (t.getTimeLeft() == 0 && t.isRunning()) {
+                addObject(timesUpText, 300, 370);
+                gameOver();
+                
             }
+
         }
+        
     }
+    
 
     private void gameOver() 
     {
