@@ -39,7 +39,7 @@ public class Goomba extends Enemy
                 getWorld().removeObject(this);
             }
         }
-
+        
         checkSpeed();
     }
 
@@ -55,7 +55,7 @@ public class Goomba extends Enemy
         setImage(flattened);
         flattenTimer = 0; // start timer
 
-        Scoreboard scoreboard = ((MyWorld)getWorld()).getScoreboard();
+        Scoreboard scoreboard = ((Level) getWorld()).getScoreboard();
         scoreboard.update(SCORE);
     }
 

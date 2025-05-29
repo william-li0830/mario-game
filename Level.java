@@ -1,11 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Adds intial objects to the game.
- * @author (William Li) 
- * @version (05/16/25)
+ * Write a description of class Levels here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class MyWorld extends greenfoot.World
+public abstract class Level extends World
 {
     private Scoreboard scoreboard;
     private Mario mario;
@@ -17,7 +18,7 @@ public class MyWorld extends greenfoot.World
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MyWorld()
+    public Level()
     {    
         super(600, 400, 1); 
         GreenfootImage bg = new GreenfootImage("MarioBackground.png");
@@ -43,24 +44,6 @@ public class MyWorld extends greenfoot.World
         addObject(scoreboard, getWidth() - 70, 20);
 
         addFloor();
-
-        addObject(new Timer(), 300,20);
-
-        //addObject(new Bush(), 400,50);
-        //addObject(new Bush(), 400,40);
-        //addObject(new Bush(), 400,30);
-
-        //addObject(new Pipe(), 400,50);
-        //addObject(new Pipe(), 400,50);
-        //addObject(new Pipe(), 400,50);
-
-        CoinBlocks(100, getHeight()/2);
-        CoinBlocks(300, getHeight()/3*2);
-        CoinBlocks(500, getHeight()/5*3);
-
-
-        addObject(new Goomba(), 100, 370);
-        addObject(new Koopa(), 428,356);
     }
 
     public void act()
@@ -154,3 +137,4 @@ public class MyWorld extends greenfoot.World
         return scoreboard;
     }
 }
+
