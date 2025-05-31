@@ -24,7 +24,7 @@ public class TitleScreen extends World
 
     private void prepare()
     {
-        
+
         addObject(new StartButton(), 300 , 234); //starts the game
     }
 

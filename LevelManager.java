@@ -9,29 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LevelManager extends Actor
 {
 
-    private int currentLevel = 1;
-    
-    public LevelManager() {
-    }
-    public void act()
-    {
-        if (shouldAdvance()) {
-            advanceLevel();
-        }
-    }
-
-    private boolean shouldAdvance()
-    {
-        return false; //TODO
-    }
-
-    private void advanceLevel()
-    {
-        if (currentLevel == 1) {
-            Greenfoot.setWorld(new Level2());
-        } else if (currentLevel == 2) {
-            //Greenfoot.setWorld(new Level3());
-        }
-        currentLevel++;
-    }
+    // TODO: add a Pipe (actor) in each level, ideally hard to reach. If Mario goes down it. Call advanceLevel()
+    public static int currentLevel = 1;
 }
+

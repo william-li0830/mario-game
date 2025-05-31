@@ -107,11 +107,9 @@ public abstract class Level extends World
         if (!getObjects(Timer.class).isEmpty()) {
             Timer t = (Timer) getObjects(Timer.class).get(0);
             if (t.getTimeLeft() == 0 && t.isRunning()) {
-                addObject(timesUpText, 300, 370);
+                addObject(timesUpText, 300, 350);
                 gameOver();
-                
             }
-
         }
         
     }

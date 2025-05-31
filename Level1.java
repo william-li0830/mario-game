@@ -8,16 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends Level
 {
-
     /**
      * Constructor for objects of class Level1.
      * 
-     */
+     */  
+    private Mario mario;
     public Level1()
     {
         super();
         
         addFloor();
+        
+        mario = new Mario();
+        addObject(mario,235,356);
 
         addObject(new Timer(), 300,20);
 
@@ -27,6 +30,10 @@ public class Level1 extends Level
 
         addObject(new Goomba(), 100, 370);
         addObject(new Koopa(), 428,356);
+        
+        //addObject(new Bush(),200,370);
+        
+        addObject(new Pipe(), 600, 500);
         
     }
 }
