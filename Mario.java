@@ -114,7 +114,7 @@ public class Mario extends Actor
         this.skipRate = skipRate;
         // Makes sure the animation doesn't go out of bounds
         checkAnimationBounds();
-        
+
         setImage(animation[frame]);
     }
 
@@ -155,7 +155,7 @@ public class Mario extends Actor
         {
             setLocation(getX() + speed, getY());
         }
-        
+
         // Jumping action
         if(Greenfoot.isKeyDown("space") && jumpReady)
         {
@@ -301,7 +301,10 @@ public class Mario extends Actor
 
                 if (enemy instanceof Koopa)
                 {
-                    takeDamage();
+                    if (!isFalling()) {
+
+                        takeDamage();
+                    }
                 } else if (enemy instanceof Goomba)
                 {
                     Goomba goomba = (Goomba) enemy;

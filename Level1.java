@@ -15,7 +15,7 @@ public class Level1 extends Level
     public Level1(Mario mario)
     {
         super(mario);
-        Text levelText = new Text("Level 1", Color.WHITE, 23);
+        Text levelText = new Text("LEVEL 1", Color.WHITE, 23);
         addObject(levelText, 40,20);
         
         CoinBlocks(100, getHeight()/2);

@@ -14,7 +14,7 @@ public class Scoreboard extends Actor
     public Scoreboard(int s)
     {
         this.score = s;
-        this.text = "Score: " + score;
+        this.text = "SCORE: " + score;
         fontSize = 25;
         textColor = Color.WHITE;
         backColor = new Color(0, 0, 0, 0);

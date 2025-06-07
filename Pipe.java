@@ -23,7 +23,7 @@ public class Pipe extends Actor
         int pipeHeight = getImage().getHeight();
         int yDistance = pipeHeight / 2 + 1;
         Actor mario = getOneObjectAtOffset(0,-yDistance,Mario.class);
-        if(mario!= null && Greenfoot.isKeyDown("down") ) 
+        if(mario!= null && (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))) 
         {  
             LevelManager.advanceLevel();
             Greenfoot.playSound("Pipe.mp3");

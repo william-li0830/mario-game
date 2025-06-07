@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class EndScreen extends World
 {
     private Text thankYouForPlaying;
+    
     /**
      * Constructor for objects of class EndScreen.
      * 
@@ -30,7 +31,17 @@ public class EndScreen extends World
      int centerX = getWidth()/2;
      int centerY = getHeight()/2;
      
-     thankYouForPlaying = new Text("THANK YOU FOR PLAYING!", Color.RED, 40);
-     addObject(thankYouForPlaying, centerX, centerY);
+     GreenfootImage bg = new GreenfootImage("MarioBackground.png");
+        bg.scale(600, 400);
+        setBackground(bg);
+
+     
+     thankYouForPlaying = new Text("THANK YOU FOR PLAYING!", Color.WHITE, 40);
+     addObject(thankYouForPlaying, centerX, centerY-40);
+     
+     Scoreboard scoreboard = LevelManager.getScoreboard();
+     
+     Text yourScore = new Text("YOUR SCORE: " + scoreboard.getScore(), Color.WHITE,40);
+     addObject(yourScore, centerX, centerY + 50);
     }
 }

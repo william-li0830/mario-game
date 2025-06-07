@@ -16,7 +16,7 @@ public class Level3 extends Level
     {
         super(mario);
         
-        Text levelText = new Text("Level 3", Color.WHITE, 23);
+        Text levelText = new Text("LEVEL 3", Color.WHITE, 23);
         addObject(levelText, 40,20);
 
         StoneBlocks(100, getHeight()/2);
