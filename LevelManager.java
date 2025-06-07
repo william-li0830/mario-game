@@ -10,11 +10,18 @@ public class LevelManager extends Actor
 {
     public static int currentLevel = 1;
     public static Mario mario;
+    public static Scoreboard scoreboard;
     
     public static void startGame() {
+        scoreboard = new Scoreboard(0);
         currentLevel = 1;
         mario = new Mario();
         Greenfoot.setWorld(new Level1(mario));
+    }
+    
+    public static Scoreboard getScoreboard()
+    {
+        return scoreboard;
     }
     
     public static void advanceLevel() 

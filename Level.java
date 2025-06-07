@@ -22,6 +22,7 @@ public abstract class Level extends World
     {    
         super(600, 400, 1); 
         this.mario = mario;
+        
         GreenfootImage bg = new GreenfootImage("MarioBackground.png");
         bg.scale(600, 400);
         setBackground(bg);
@@ -44,8 +45,8 @@ public abstract class Level extends World
         addObject(new Timer(), 300,20);
 
         HealthHearts(mario.getHealth(), 96, 20);
-        scoreboard = new Scoreboard(0);
-        addObject(scoreboard, getWidth() - 70, 20);
+        
+        addObject(LevelManager.getScoreboard(), getWidth() - 70, 20);
 
         addFloor();
     }
@@ -133,9 +134,5 @@ public abstract class Level extends World
 
     }
 
-    public Scoreboard getScoreboard()
-    {
-        return scoreboard;
-    }
 }
 

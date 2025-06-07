@@ -25,7 +25,7 @@ public class CoinBlock extends Platform
             setImage("EmptyBlock.png");
         }
 
-        Scoreboard scoreboard = ((Level) getWorld()).getScoreboard();
+        Scoreboard scoreboard = LevelManager.getScoreboard();
         scoreboard.update(1);
     }
 }

@@ -14,7 +14,7 @@ public class Scoreboard extends Actor
     public Scoreboard(int s)
     {
         this.score = s;
-        this.text = "Score = " + score;
+        this.text = "Score: " + score;
         fontSize = 25;
         textColor = Color.WHITE;
         backColor = new Color(0, 0, 0, 0);
@@ -24,7 +24,7 @@ public class Scoreboard extends Actor
     public void update(int change)
     {
         score += change;
-        setLabel("SCORE = " + score);
+        setLabel("SCORE: " + score);
     }
     
     public void setLabel(String txt)
