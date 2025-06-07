@@ -19,14 +19,14 @@ public class Level3 extends Level
         Text levelText = new Text("LEVEL 3", Color.WHITE, 23);
         addObject(levelText, 40,20);
 
-        StoneBlocks(100, getHeight()/2);
-        CoinBlocks(300, getHeight()/3*2);
+        StoneBlocks(100, getHeight()/2, 3);
+        CoinBlocks(300, getHeight()/3*2, 2);
 
         addObject(new Goomba(), 428,356);
         // TODO: addObject(new Paratroopa(),400,356);
 
         addObject(new Bush(), 200,370);
 
-        addObject(new Pipe(), 600, 500);
+        addObject(new Pipe(), 594, 360);
     }
 }

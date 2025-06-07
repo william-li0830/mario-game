@@ -145,7 +145,7 @@ public class Enemy extends Actor
         int wallWidth = rightWall.getImage().getWidth();
         int newX = rightWall.getX() - (wallWidth + getImage().getWidth())/2;
         setLocation(newX - 5, getY());
-
+        speed *= -1;
     }
 
     // Checks Mario'sleftt side for any Platforms he might collide wit
@@ -165,5 +165,6 @@ public class Enemy extends Actor
         int wallWidth = leftWall.getImage().getWidth();
         int newX = leftWall.getX() + (wallWidth + getImage().getWidth())/2;
         setLocation(newX + 5, getY());
+        speed *= -1;
     }    
 }

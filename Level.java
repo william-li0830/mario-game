@@ -22,7 +22,7 @@ public abstract class Level extends World
     {    
         super(600, 400, 1); 
         this.mario = mario;
-        
+
         GreenfootImage bg = new GreenfootImage("MarioBackground.png");
         bg.scale(600, 400);
         setBackground(bg);
@@ -40,12 +40,12 @@ public abstract class Level extends World
     {
         addFloor();
 
-        addObject(this.mario,235,356);
+        addObject(this.mario,300,0);
 
         addObject(new Timer(), 300,20);
 
         HealthHearts(mario.getHealth(), 96, 20);
-        
+
         addObject(LevelManager.getScoreboard(), getWidth() - 70, 20);
 
         addFloor();
@@ -77,22 +77,22 @@ public abstract class Level extends World
     }
 
     // A modular method designed to add blocks in clumps of 3 whever requested
-    public void CoinBlocks(int xStart, int yStart)
+    public void CoinBlocks(int xStart, int yStart, int number)
     {
         CoinBlock coinBlock = new CoinBlock();
         int blockWidth = coinBlock.getImage().getWidth();
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < number; i++)
         {
             addObject(new CoinBlock(), xStart+(i*blockWidth), yStart);
         }
     }
 
     // adds StoneBlocks in clumps of 3 
-    public void StoneBlocks(int xStart, int yStart)
+    public void StoneBlocks(int xStart, int yStart, int number)
     {
         StoneBlock stoneBlock = new StoneBlock();
         int blockWidth = stoneBlock.getImage().getWidth();
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < number; i++)
         {
             addObject(new StoneBlock(), xStart+(i*blockWidth), yStart);
         }

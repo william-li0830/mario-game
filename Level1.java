@@ -17,17 +17,17 @@ public class Level1 extends Level
         super(mario);
         Text levelText = new Text("LEVEL 1", Color.WHITE, 23);
         addObject(levelText, 40,20);
-        
-        CoinBlocks(100, getHeight()/2);
-        CoinBlocks(300, getHeight()/3*2);
-        CoinBlocks(500, getHeight()/5*3);
+
+        CoinBlocks(100, getHeight()/2, 3);
+        CoinBlocks(300, getHeight()/3*2, 2);
+        CoinBlocks(500, getHeight()/5*3, 3);
 
         addObject(new Goomba(), 100, 370);
         addObject(new Koopa(), 428,356);
 
         addObject(new Bush(),200,370);
 
-        addObject(new Pipe(), 600, 500);
+        addObject(new Pipe(), 594, 360);
 
     }
 }

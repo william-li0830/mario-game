@@ -19,12 +19,15 @@ public class Level5 extends Level
         Text levelText = new Text("LEVEL 5", Color.WHITE, 23);
         addObject(levelText, 40,20);
 
-        StoneBlocks(100, getHeight()/2);
-        CoinBlocks(300, getHeight()/3*2);
-        CoinBlocks(500, getHeight()/5*3);
+        CoinBlocks(100, getHeight()/2, 3);
+        StoneBlocks(300, getHeight()/3*2, 3);
 
-        addObject(new Goomba(), 100, 370);
+        CoinBlocks(410, 120, 1);
+        StoneBlocks(438, 120, 3);
 
-        addObject(new Pipe(), 600, 500);
+        addObject(new Koopa(), 428,356);
+
+        addObject(new Pipe(), 480, 90);
+
     }
 }

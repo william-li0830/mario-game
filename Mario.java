@@ -50,7 +50,7 @@ public class Mario extends Actor
     {
         health = FULL_HEALTH;
         frame = 0;
-        speed = 4;
+        speed = 3;
         animation = MarioIdle;
         skipRate = 50;
         actCounter = 0;
