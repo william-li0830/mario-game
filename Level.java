@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Level extends World
 {
+    protected static final int BLOCK_SIZE = 28;
+    
     private Scoreboard scoreboard;
     private Mario mario;
     private Text timesUpText;
@@ -65,14 +67,14 @@ public abstract class Level extends World
     // This method auto-generated a floor for the entire level, no matter how long it is! Wohoo generalization :)
     public void addFloor()
     {
-        Block block = new Block();
+        GrassBlock block = new GrassBlock();
         int blockWidth = block.getImage().getWidth();
         int blockHeight = block.getImage().getHeight();
         int numBlocksFloor = getWidth() / blockWidth;
 
         for (int i = 0; i <= numBlocksFloor; ++i)
         {
-            addObject(new Block(), i*blockWidth, getHeight() - blockHeight/2);
+            addObject(new GrassBlock(), i*blockWidth, getHeight() - blockHeight/2);
         }
     }
 
@@ -84,6 +86,16 @@ public abstract class Level extends World
         for(int i = 0; i < number; i++)
         {
             addObject(new CoinBlock(), xStart+(i*blockWidth), yStart);
+        }
+    }
+
+    public void Blocks(int xStart, int yStart, int number)
+    {
+        Block block = new Block();
+        int blockWidth = block.getImage().getWidth();
+        for(int i = 0; i < number; i++)
+        {
+            addObject(new Block(), xStart+(i*blockWidth), yStart);
         }
     }
 

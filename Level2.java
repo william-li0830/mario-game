@@ -19,13 +19,23 @@ public class Level2 extends Level
         Text levelText = new Text("LEVEL 2", Color.WHITE, 23);
         addObject(levelText, 40,20);
 
-        StoneBlocks(100, getHeight()/2, 3);
-        CoinBlocks(300, getHeight()/3*2, 3);
-        CoinBlocks(500, getHeight()/5*3, 1);
+        // My sister designed this level
+        StoneBlocks(100, 300, 2);
+        CoinBlocks(100 + BLOCK_SIZE*2, 300, 1);
+        StoneBlocks(100 + BLOCK_SIZE*3, 300, 1);
+
+        Blocks(230, 240, 2);
+        CoinBlocks(230 + BLOCK_SIZE*2, 240, 1);
+
+        StoneBlocks(350, 180, 6);
+
+        CoinBlocks(390, 112, 1);
+        Blocks(390 + BLOCK_SIZE, 112, 2);
+        
+        addObject(new Pipe(), 420, 80);
 
         addObject(new Goomba(), 100, 370);
 
-        addObject(new Pipe(), 594, 360);
 
     }
 }
