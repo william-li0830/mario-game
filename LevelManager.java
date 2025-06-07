@@ -30,7 +30,7 @@ public class LevelManager extends Actor
             Greenfoot.setWorld(new Level4(mario));
         } else if (currentLevel == 4) {
             currentLevel++;
-            Greenfoot.setWorld(new FinalLevel(mario));
+            Greenfoot.setWorld(new Level5(mario));
         } else if (currentLevel == 5) {
             Greenfoot.setWorld(new EndScreen());
         } 

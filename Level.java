@@ -11,7 +11,7 @@ public abstract class Level extends World
     private Scoreboard scoreboard;
     private Mario mario;
     private Text timesUpText;
-    
+
     private boolean gameOver;
 
     /**
@@ -26,7 +26,7 @@ public abstract class Level extends World
         bg.scale(600, 400);
         setBackground(bg);
         prepare();
-        
+
         timesUpText = new Text("TIME'S UP!", Color.RED, 100);
 
     }
@@ -40,10 +40,10 @@ public abstract class Level extends World
         addFloor();
 
         addObject(this.mario,235,356);
-        
+
         addObject(new Timer(), 300,20);
-        
-        HealthHearts(mario.getHealth(), 20,20);
+
+        HealthHearts(mario.getHealth(), 96, 20);
         scoreboard = new Scoreboard(0);
         addObject(scoreboard, getWidth() - 70, 20);
 
@@ -115,9 +115,8 @@ public abstract class Level extends World
                 gameOver();
             }
         }
-        
+
     }
-    
 
     private void gameOver() 
     {
