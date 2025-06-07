@@ -12,26 +12,16 @@ public class FinalLevel extends Level
      * Constructor for objects of class Level5.
      * 
      */
-    public FinalLevel()
+    public FinalLevel(Mario mario)
     {
-         super();
+        super(mario);
         
-        addFloor();
-        
-        Mario mario = new Mario();
-        
-        addObject(mario,235,356);
-
-
-        addObject(new Timer(), 300,20);
-
         StoneBlocks(100, getHeight()/2);
         CoinBlocks(300, getHeight()/3*2);
-    CoinBlocks(500, getHeight()/5*3);
+        CoinBlocks(500, getHeight()/5*3);
 
         addObject(new Goomba(), 100, 370);
-        
-        
+
         addObject(new Pipe(), 600, 500);
     }
 }

@@ -18,9 +18,10 @@ public abstract class Level extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    public Level()
+    public Level(Mario mario)
     {    
         super(600, 400, 1); 
+        this.mario = mario;
         GreenfootImage bg = new GreenfootImage("MarioBackground.png");
         bg.scale(600, 400);
         setBackground(bg);
@@ -36,10 +37,13 @@ public abstract class Level extends World
      */
     private void prepare()
     {
-        mario = new Mario();
-        addObject(mario,235,356);
-        HealthHearts(mario.getFullHealth(), 20,20);
+        addFloor();
+
+        addObject(this.mario,235,356);
         
+        addObject(new Timer(), 300,20);
+        
+        HealthHearts(mario.getHealth(), 20,20);
         scoreboard = new Scoreboard(0);
         addObject(scoreboard, getWidth() - 70, 20);
 

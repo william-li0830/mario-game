@@ -12,26 +12,18 @@ public class Level3 extends Level
      * Constructor for objects of class Level3.
      * 
      */
-    public Level3()
+    public Level3(Mario mario)
     {
-         super();
-         
-        addFloor();
-        Mario mario = new Mario();
-        
-        addObject(mario,235,356);
+        super(mario);
 
-
-        addObject(new Timer(), 300,20);
-        
         StoneBlocks(100, getHeight()/2);
         CoinBlocks(300, getHeight()/3*2);
-        
+
         addObject(new Goomba(), 428,356);
         // TODO: addObject(new Paratroopa(),400,356);
-        
-        //addObject(new Bush(), 300, 470);
-        
+
+        addObject(new Bush(), 200,370);
+
         addObject(new Pipe(), 600, 500);
     }
 }

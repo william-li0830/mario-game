@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
 /**
@@ -33,7 +33,7 @@ public class Mario extends Actor
 
     private static int FULL_HEALTH = 3;
 
-    // Assorted variables needed for logic in this class    
+    // Variables needed for the logic in this class    
     private int frame;
     private int health;
     private int actCounter; 
@@ -108,13 +108,13 @@ public class Mario extends Actor
 
     public void processAnimation(GreenfootImage[] animation, boolean idler, int skipRate)
     {
-        // Set current animation state
+        // Sets the current animation state
         this.animation = animation;
         this.idler = idler;
         this.skipRate = skipRate;
-        // Make sure we didn't transition to an invalid frame state
+        // Makes sure the animation doesn't go out of bounds
         checkAnimationBounds();
-        // Update information to new image immediately for snappy responsiveness
+        
         setImage(animation[frame]);
     }
 
@@ -155,22 +155,20 @@ public class Mario extends Actor
         {
             setLocation(getX() + speed, getY());
         }
-
-        // Jump action
+        
+        // Jumping action
         if(Greenfoot.isKeyDown("space") && jumpReady)
         {
             gravity = -15;
             jumpReady = false;
         }
 
-        // Allow the user to end the jump early by letting go of the spacebar
         if(!Greenfoot.isKeyDown("space") && !jumpReady && airControl)
         {
             if(gravity<0)
             {
                 gravity = 0;
             }
-
             airControl = false;
         }
     }    
@@ -264,7 +262,7 @@ public class Mario extends Actor
         }
     }
 
-    // Ensures Mario's collisiont with the right wall is smooth and glitchless
+    // Ensures Mario's collision with the right wall is smooth and glitchless
     private void stopByRightWall(Actor rightWall)
     {
         int wallWidth = rightWall.getImage().getWidth();
@@ -273,7 +271,7 @@ public class Mario extends Actor
 
     }
 
-    // Checks Mario'sleftt side for any Platforms he might collide wit
+    // Checks Mario's left side for any Platforms he might collide wit
     private void checkLeftWalls()
     {
         int spriteWidth = getImage().getWidth();
@@ -349,7 +347,7 @@ public class Mario extends Actor
     private void shrinkMario()
     {
         GreenfootImage flattened = new GreenfootImage(getImage());
-        flattened.scale(flattened.getWidth(), flattened.getHeight() / 2); // shrink vertically
+        flattened.scale(flattened.getWidth(), flattened.getHeight() / 2); // shrinks vertically
         setImage(flattened);
     }
 

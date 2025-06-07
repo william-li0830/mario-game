@@ -21,7 +21,7 @@ public class StartButton extends Actor
     {
         if(Greenfoot.mousePressed(this))
         {
-            Greenfoot.setWorld(new Level1()); 
+            LevelManager.startGame();
         }
     }
 }

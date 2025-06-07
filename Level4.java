@@ -12,17 +12,9 @@ public class Level4 extends Level
      * Constructor for objects of class Level4.
      * 
      */
-    public Level4()
+    public Level4(Mario mario)
     {
-        super();
-        
-        Mario mario = new Mario();
-        
-        addObject(mario,235,356);
-
-        addFloor();
-
-        addObject(new Timer(), 300,20);
+        super(mario);
 
         CoinBlocks(100, getHeight()/2);
         CoinBlocks(300, getHeight()/3*2);
@@ -31,7 +23,7 @@ public class Level4 extends Level
         addObject(new Goomba(), 100, 370);
         addObject(new Koopa(), 428,356);
         //addObject(new Paratroopa(),420,356);
-        
+
         addObject(new Pipe(), 600, 500);
     }
 }

@@ -70,7 +70,7 @@ public class Koopa extends Enemy
     // The code that allows the Koopa go to into its shell after being touched by Mario and then, after some time, pop out again!
     public void checkTouched()
     {
-        //Trigger for when Koopa contacts Mario
+        //Trigger for when Koopa touches Mario
         if(isTouching(Mario.class) && !isTouched)
         {
             isTouched = true;

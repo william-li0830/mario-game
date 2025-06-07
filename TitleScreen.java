@@ -24,8 +24,11 @@ public class TitleScreen extends World
 
     private void prepare()
     {
+        addObject(new Clouds(),65,111);
+        addObject(new Clouds(),536,109);
+        addObject(new Clouds(),135,179);
+        addObject(new Clouds(),587,176);
 
         addObject(new StartButton(), 300 , 234); //starts the game
-    }
-
+}
 }

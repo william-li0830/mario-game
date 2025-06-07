@@ -51,7 +51,7 @@ public class Goomba extends Enemy
     public void flattenGoomba()
     {
         GreenfootImage flattened = new GreenfootImage(getImage());
-        flattened.scale(flattened.getWidth(), flattened.getHeight() / 2); // shrink vertically
+        flattened.scale(flattened.getWidth(), flattened.getHeight() / 2); // shrinks vertically
         setImage(flattened);
         flattenTimer = 0; // start timer
 
