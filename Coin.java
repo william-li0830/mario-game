@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Coin here.
- * 
- * @author(William Li)  
- * @version (a version number or a date)
+ * A Coin that pops up and falls back down due to gravity.
+ * Disappears after returning to its original position.
  */
 
 public class Coin extends Actor {
@@ -12,10 +10,12 @@ public class Coin extends Actor {
     private int gravity = 1;
     private int originalY;
 
+    // Stores original Y position when added to the world
     protected void addedToWorld(World world) {
         originalY = getY(); 
     }
 
+    // Moves the coin and removes it after it falls back down
     public void act() {
         setLocation(getX(), getY() + speed);
         speed += gravity;

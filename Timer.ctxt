@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Timer
-comment0.text=\r\n\ Code\ for\ game\ timer.\r\n\ @author\ (William\ Li)\ \r\n\ @version\ (05/16/25)\r\n
+comment0.text=\r\n\ A\ simple\ game\ timer\ counting\ down\ from\ 30\ seconds.\r\n\ Updates\ its\ text\ every\ frame\ and\ stops\ when\ time\ runs\ out.\r\n
 comment1.params=
 comment1.target=Timer()
 comment2.params=

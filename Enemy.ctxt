@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Enemy
-comment0.text=\r\n\ Code\ Enemies\ .\r\n\ @author\ (William\ Li)\ \r\n\ @version\ (05/16/25)\r\n
+comment0.text=\r\n\ A\ basic\ enemy\ that\ walks,\ falls\ with\ gravity,\ and\ bounces\ off\ walls\ and\ platforms.\r\n
 comment1.params=speed
 comment1.target=Enemy(int)
 comment10.params=ground

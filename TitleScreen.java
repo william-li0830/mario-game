@@ -1,11 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * TitleScreen of the game before the game starts
+ * Contains a start button for the player to enter the game
  */
+
 public class TitleScreen extends World
 {
     /**
@@ -29,6 +28,6 @@ public class TitleScreen extends World
         addObject(new Clouds(),135,179);
         addObject(new Clouds(),587,176);
 
-        addObject(new StartButton(), 300 , 234); //starts the game
+        addObject(new StartButton(), 300 , 234);
     }
 }

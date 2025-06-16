@@ -1,17 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Code Goomba's movement.
- * @author (William Li) 
- * @version (05/16/25)
+ * A Goomba enemy that moves, can be flattened by Mario, and gives points when defeated.
  */
 public class Goomba extends Enemy
 {
-    /**
-     * Act - do whatever the Goomba wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-
     private static int SPEED = 1;
     private static int SCORE = 3;
     private boolean isTouched = false;
@@ -31,12 +24,13 @@ public class Goomba extends Enemy
     {
         super.act();
 
+        // Increment flattenTimer if it is greater than 0
         if (flattenTimer >= 0)
         {
             flattenTimer++;
-            if (flattenTimer >= 100) // 2 seconds
+            if (flattenTimer >= 100)
             {
-                getWorld().removeObject(this);
+                getWorld().removeObject(this); // remove goomba after 2 seconds
             }
         }
 
@@ -48,6 +42,7 @@ public class Goomba extends Enemy
         this.speed = super.getSpeed();
     }
 
+    // Flattens Goomba and starts timer; adds points to scoreboard
     public void flattenGoomba()
     {
         GreenfootImage flattened = new GreenfootImage(getImage());
@@ -59,6 +54,7 @@ public class Goomba extends Enemy
         scoreboard.update(SCORE);
     }
 
+    // Returns true if Goomba is currently flattened
     public boolean isFlattened()
     {
         return flattenTimer > 0;

@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level5 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Level 5 of the game.
  */
 public class Level5 extends Level
 {
@@ -26,7 +23,6 @@ public class Level5 extends Level
         StoneBlocks(438, 120, 3);
 
         addObject(new Koopa(), 428,356);
-
         addObject(new Pipe(), 480, 90);
 
     }

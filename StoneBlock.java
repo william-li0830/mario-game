@@ -1,11 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StoneBlock here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A simple stone block
  */
+
 public class StoneBlock extends Platform
 {
     /**

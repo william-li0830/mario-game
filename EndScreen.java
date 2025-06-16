@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * EndScreen is shown when player finishes all levels
+ * Displays a thank-you message and the final score.
  */
 public class EndScreen extends World
 {
@@ -20,10 +18,6 @@ public class EndScreen extends World
         prepare();
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
         int centerX = getWidth()/2;
@@ -37,9 +31,7 @@ public class EndScreen extends World
         addObject(thankYouForPlaying, centerX, centerY-40);
 
         Scoreboard scoreboard = LevelManager.getScoreboard();
-
         Text yourScore = new Text("YOUR SCORE: " + scoreboard.getScore(), Color.RED,40);
-
         addObject(yourScore, centerX, centerY + 50);
     }
 }

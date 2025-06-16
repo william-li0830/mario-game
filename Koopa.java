@@ -1,9 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- *Code for Koopa's movement and animation.
- * @author(William Li) 
- * @version (05/16/25)
+ * Koopa enemy with walking and shell animations.
+ * Can be touched by Mario to enter shell state and pop out after a delay.
  */
 public class Koopa extends Enemy
 {

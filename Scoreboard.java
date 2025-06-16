@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Updates the score.
- * @author (William Li) 
- * @version (05/16/25)
+ * Displays and updates the player's score on screen.
+ * The score can be increased by calling the update method.
+ * 
  */
 public class Scoreboard extends Actor
 {

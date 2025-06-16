@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Koopa
-comment0.text=\r\nCode\ for\ Koopa's\ movement\ and\ animation.\r\n\ @author(William\ Li)\ \r\n\ @version\ (05/16/25)\r\n
+comment0.text=\r\n\ Koopa\ enemy\ with\ walking\ and\ shell\ animations.\r\n\ Can\ be\ touched\ by\ Mario\ to\ enter\ shell\ state\ and\ pop\ out\ after\ a\ delay.\r\n
 comment1.params=
 comment1.target=Koopa()
 comment2.params=

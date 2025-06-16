@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=CoinBlock
-comment0.text=\r\n\ Code\ to\ spill\ out\ a\ coin\ by\ the\ coinBlock\ if\ Mario\ hits\ it.\r\n\ @author\ (William\ Li)\ \r\n\ @version\ (05/16/25)\r\n
+comment0.text=\r\n\ A\ CoinBlock\ contains\ a\ few\ coins\ that\ can\ be\ released\ when\ hit.\r\n\ Changes\ to\ an\ empty\ block\ when\ all\ coins\ are\ used.\r\n
 comment1.params=
 comment1.target=CoinBlock()
 comment2.params=

@@ -2,10 +2,10 @@ import greenfoot.*;  //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
 /**
- * This class handles Mario's animations, movement, and interactions.
- * Mario loses health when touching a Koopa or a Goomba, and the game ends if health reaches 0.
- * @author(William Li) 
- * @version (05/16/25)
+ * Handles Mario's animations, movement, collisions, and health.
+ * Mario can move left/right, jump, and interact with enemies and platforms.
+ * Health decreases when touching enemies from the side
+ * The game ends if health reaches 0
  */
 public class Mario extends Actor
 {
@@ -202,7 +202,7 @@ public class Mario extends Actor
     {
         // Information about Mario's dimensions to process collisions
         int marioHeight = getImage().getHeight();
-        int yDistance = marioHeight/2 + 1;
+        int yDistance = marioHeight/2 + 1;      // Added 1 to fix a bug where mario would go off screen
         Actor ground = getOneObjectAtOffset(0,yDistance,Platform.class);
         if(ground == null)
         {
@@ -245,6 +245,7 @@ public class Mario extends Actor
         int newY = ceiling.getY() + (ceilingHeight + getImage().getHeight())/2;
         setLocation(getX(), newY);
 
+        // Let Coinblock handle spawning coin
         if (ceiling instanceof CoinBlock) {
             ((CoinBlock) ceiling).spawnCoin(); //My sister helped write this
         }
@@ -282,6 +283,7 @@ public class Mario extends Actor
             stopByLeftWall(leftWall);
         }
     }
+    
     // Ensures Mario's collision with the left wall is smooth and glitchle
     private void stopByLeftWall(Actor leftWall)
     {
@@ -290,26 +292,28 @@ public class Mario extends Actor
         setLocation(newX + 5, getY());
     }    
 
+    // Checks collisions with enemies and handles damage or enemy flattening.
     private void checkEnemies()
     {
+        // Check if Mario is currently intersecting with any type of enemy
         Object enemy = getOneIntersectingObject(Enemy.class);
 
         if (enemy != null)
         {
             if (!isHit) {
                 isHit = true;
-                if (enemy instanceof Koopa)//to check if there is an instance of a Koopa
+                if (enemy instanceof Koopa)// to check if there is an instance of a Koopa
                 {
                     if (!isFalling()) {
-                        takeDamage();
+                        takeDamage(); // only take damage if Mario is hit on the side
                     }
-                } else if (enemy instanceof Goomba)//to check if there is an instance of a Goomba
+                } else if (enemy instanceof Goomba)// to check if there is an instance of a Goomba
                 {
                     Goomba goomba = (Goomba) enemy; 
                     if (isFalling())
                     {
-                        goomba.flattenGoomba();
-                    } else if (!goomba.isFlattened())
+                        goomba.flattenGoomba(); // Flatten/kill the goomba if mario jumps onto it
+                    } else if (!goomba.isFlattened()) // Dont take damage if goomba is already flattened/dying
                     {
                         takeDamage();
                     }
@@ -321,6 +325,7 @@ public class Mario extends Actor
         }
     }
 
+    // Reduces Mario's health and updates the hearts
     private void takeDamage()
     {
         health--;
@@ -334,6 +339,7 @@ public class Mario extends Actor
         updateHeart();
     }
 
+    // Removes one heart from the screen when Mario takes damage.
     private void updateHeart()
     {
         List<HealthHeart> hearts = getWorld().getObjects(HealthHeart.class); 

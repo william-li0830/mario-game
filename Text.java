@@ -2,15 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Code for in-game texts.
- * @author (William Li) 
- * @version (05/16/25)
+ * @author (William Li)
  */
 public class Text extends Actor
 {
-    /**
-     * Act - do whatever the Text wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     GreenfootImage TextImage;
     Color color;
     int size;

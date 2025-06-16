@@ -1,18 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Platforms here.
- * 
- * @author (your name)
+/* 
+ * A superclass for all platform such as blocks and pipes
+ * Provides a type that Mario can stand on or interact with
  */
 public class Platform extends Actor
 {
-    /**
-     * Act - do whatever the Platforms wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
 }

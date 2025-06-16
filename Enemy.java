@@ -1,10 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Code Enemies .
- * @author (William Li) 
- * @version (05/16/25)
+ * A basic enemy that walks, falls with gravity, and bounces off walls and platforms.
  */
+
 public class Enemy extends Actor
 {
 
@@ -13,13 +12,13 @@ public class Enemy extends Actor
     public boolean airControl = true;    
 
     protected int speed = 1;
-    private double gravity,gForce;
+    private double gravity, gForce;
 
     public Enemy(int speed)
     {
         this.speed = -speed;
         gravity = 1;
-        gForce = .1;
+        gForce = 0.1;
     }
 
     public void act() 
@@ -145,7 +144,7 @@ public class Enemy extends Actor
         int wallWidth = rightWall.getImage().getWidth();
         int newX = rightWall.getX() - (wallWidth + getImage().getWidth())/2;
         setLocation(newX - 5, getY());
-        speed *= -1;
+        speed *= -1;    // Change direction if hit
     }
 
     // Checks Mario'sleftt side for any Platforms he might collide wit
@@ -165,6 +164,6 @@ public class Enemy extends Actor
         int wallWidth = leftWall.getImage().getWidth();
         int newX = leftWall.getX() + (wallWidth + getImage().getWidth())/2;
         setLocation(newX + 5, getY());
-        speed *= -1;
+        speed *= -1;    // Change direction if hit
     }    
 }

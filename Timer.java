@@ -1,16 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Code for game timer.
- * @author (William Li) 
- * @version (05/16/25)
+ * A simple game timer counting down from 30 seconds.
+ * Updates its text every frame and stops when time runs out.
  */
+
 public class Timer extends Actor
 {
-    /**
-     * Act - do whatever the Timer wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private static int FRAMES_PER_SEC = 60;
     private static int GAME_TIME_SEC = 30 * FRAMES_PER_SEC; 
 

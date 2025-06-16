@@ -1,17 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class LevelManager here.
+ * Manages the game's levels, Mario character, and scoreboard
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The same Mario and scoreboard are used across levels to carry over health and score
+ * 
  */
 public class LevelManager extends Actor
 {
     public static int currentLevel = 1;
-    public static Mario mario; // the same Mario is carried over from previous level to the next(including health)
-    public static Scoreboard scoreboard; //so that the score doesn't reset every level
+    public static Mario mario;            // Static so the same Mario is carried over from previous level to the next(including health)
+    public static Scoreboard scoreboard;  // Static so that the score doesn't reset every level
 
+    // Starts the game on level 1, initialize scoreboard and Mario
     public static void startGame() {
         scoreboard = new Scoreboard(0);
         currentLevel = 1;
@@ -24,7 +25,13 @@ public class LevelManager extends Actor
         return scoreboard;
     }
 
-    public static void advanceLevel() // My sister helped me with this 
+    /**
+     * My sister helped me with this 
+     * 
+     * Advances to the next level, updating the score and loading the new world.
+     * Ends the game after the last level.
+     */
+    public static void advanceLevel()
     {
         if (currentLevel == 1) {
             currentLevel++;

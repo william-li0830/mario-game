@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Levels here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Abstract/super class for game levels
+ * Initializes shared components to the world
+ * Handles game timer, Mario health display and game over logic
  */
 public abstract class Level extends World
 {
@@ -16,10 +15,7 @@ public abstract class Level extends World
 
     private boolean gameOver;
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    // Sets up the world size and background, and prepares initial objects.
     public Level(Mario mario)
     {    
         super(600, 400, 1); 
@@ -29,15 +25,9 @@ public abstract class Level extends World
         bg.scale(600, 400);
         setBackground(bg);
         prepare();
-
-        timesUpText = new Text("TIMES UP!", Color.RED, 100);
-
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+    // Prepare initial objects: floor, Mario, timer, health hearts, scoreboard
     private void prepare()
     {
         addFloor();
@@ -49,14 +39,13 @@ public abstract class Level extends World
         HealthHearts(mario.getHealth(), 96, 20);
 
         addObject(LevelManager.getScoreboard(), getWidth() - 70, 20);
-
-        addFloor();
     }
 
     public void act()
     {
         checkTimer();
 
+        // Trigger game over if mario loses all health
         if(mario.getHealth() <= 0 && !gameOver)
         {
             gameOver = true;
@@ -78,7 +67,7 @@ public abstract class Level extends World
         }
     }
 
-    // A modular method designed to add blocks in clumps of  whever requested
+    // Add multiple CoinBlocks horizontally
     public void CoinBlocks(int xStart, int yStart, int number)
     {
         CoinBlock coinBlock = new CoinBlock();
@@ -89,6 +78,7 @@ public abstract class Level extends World
         }
     }
 
+    // Add multiple Blocks horizontally
     public void Blocks(int xStart, int yStart, int number)
     {
         Block block = new Block();
@@ -99,7 +89,7 @@ public abstract class Level extends World
         }
     }
 
-    // adds StoneBlocks in clumps 
+    // Add multiple StoneBlocks horizontally
     public void StoneBlocks(int xStart, int yStart, int number)
     {
         StoneBlock stoneBlock = new StoneBlock();
@@ -110,6 +100,7 @@ public abstract class Level extends World
         }
     }
 
+    // Add multipel HealthHearts horizontally
     public void HealthHearts(int number, int xStart, int yStart)
     {  
         HealthHeart healthHeart = new HealthHeart();
@@ -120,10 +111,12 @@ public abstract class Level extends World
         }
     }
 
+    // Checks the timer, and if time is up, displays "TIME'S UP!" and triggers game over.
     private void checkTimer() {
         if (!getObjects(Timer.class).isEmpty()) {
             Timer t = (Timer) getObjects(Timer.class).get(0);
             if (t.getTimeLeft() == 0 && t.isRunning()) {
+                timesUpText = new Text("TIMES UP!", Color.RED, 100);
                 addObject(timesUpText, 300, 350);
                 gameOver();
             }
@@ -138,13 +131,14 @@ public abstract class Level extends World
 
         removeObject(mario);
         Greenfoot.playSound("GAMEOVER.wav");
+        
         Timer t = (Timer) getObjects(Timer.class).get(0);
         t.stopTimer();
 
+        // Shows GameOver banner and a button to start again
         addObject(new GameOver(),centerX, centerY - 50);
         addObject(new StartButton(), centerX, centerY + 60);
 
     }
-
 }
 
