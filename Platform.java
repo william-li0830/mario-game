@@ -3,8 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Platforms here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (your name)
  */
 public class Platform extends Actor
 {
