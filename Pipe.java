@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pipe extends Platform
 { 
-
     /**
      * Act - do whatever the Pipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,7 +22,7 @@ public class Pipe extends Platform
         int pipeHeight = getImage().getHeight();
         int yDistance = pipeHeight / 2 + 1;
         Actor mario = getOneObjectAtOffset(0,-yDistance,Mario.class);
-        if(mario!= null && (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))) 
+        if(mario!= null && (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))) //Mario goes down the pipe to next the level
         {  
             LevelManager.advanceLevel();
             Greenfoot.playSound("Pipe.mp3");

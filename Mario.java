@@ -246,7 +246,7 @@ public class Mario extends Actor
         setLocation(getX(), newY);
 
         if (ceiling instanceof CoinBlock) {
-            ((CoinBlock) ceiling).spawnCoin();
+            ((CoinBlock) ceiling).spawnCoin(); //My sister helped write this
         }
     }
 
@@ -271,7 +271,7 @@ public class Mario extends Actor
 
     }
 
-    // Checks Mario's left side for any Platforms he might collide wit
+    // Checks Mario's left side for any Platforms he might collide with
     private void checkLeftWalls()
     {
         int spriteWidth = getImage().getWidth();
@@ -282,7 +282,7 @@ public class Mario extends Actor
             stopByLeftWall(leftWall);
         }
     }
-    // Ensures Mario's collisiont with the left wall is smooth and glitchle
+    // Ensures Mario's collision with the left wall is smooth and glitchle
     private void stopByLeftWall(Actor leftWall)
     {
         int wallWidth = leftWall.getImage().getWidth();
@@ -298,16 +298,14 @@ public class Mario extends Actor
         {
             if (!isHit) {
                 isHit = true;
-
-                if (enemy instanceof Koopa)
+                if (enemy instanceof Koopa)//to check if there is an instance of a Koopa
                 {
                     if (!isFalling()) {
-
                         takeDamage();
                     }
-                } else if (enemy instanceof Goomba)
+                } else if (enemy instanceof Goomba)//to check if there is an instance of a Goomba
                 {
-                    Goomba goomba = (Goomba) enemy;
+                    Goomba goomba = (Goomba) enemy; 
                     if (isFalling())
                     {
                         goomba.flattenGoomba();
@@ -317,7 +315,7 @@ public class Mario extends Actor
                     }
                 }
             }
-
+            // all instanceof lines my sister helped me write it
         } else {
             isHit = false;
         }
@@ -333,14 +331,12 @@ public class Mario extends Actor
             shrinkMario();
             Greenfoot.playSound("MarioShrinking.mp3");
         }
-
         updateHeart();
     }
 
     private void updateHeart()
     {
         List<HealthHeart> hearts = getWorld().getObjects(HealthHeart.class); 
-
         if(hearts.size() > health)
         {
             getWorld().removeObject(hearts.get(hearts.size() - 1));

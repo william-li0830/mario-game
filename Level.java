@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Level extends World
 {
     protected static final int BLOCK_SIZE = 28;
-    
+
     private Scoreboard scoreboard;
     private Mario mario;
     private Text timesUpText;
@@ -30,7 +30,7 @@ public abstract class Level extends World
         setBackground(bg);
         prepare();
 
-        timesUpText = new Text("TIME'S UP!", Color.RED, 100);
+        timesUpText = new Text("TIMES UP!", Color.RED, 100);
 
     }
 
@@ -64,7 +64,7 @@ public abstract class Level extends World
         }
     }
 
-    // This method auto-generated a floor for the entire level, no matter how long it is! Wohoo generalization :)
+    // This method auto-generated a floor for the entire level, no matter how long it is
     public void addFloor()
     {
         GrassBlock block = new GrassBlock();
@@ -78,7 +78,7 @@ public abstract class Level extends World
         }
     }
 
-    // A modular method designed to add blocks in clumps of 3 whever requested
+    // A modular method designed to add blocks in clumps of  whever requested
     public void CoinBlocks(int xStart, int yStart, int number)
     {
         CoinBlock coinBlock = new CoinBlock();
@@ -99,7 +99,7 @@ public abstract class Level extends World
         }
     }
 
-    // adds StoneBlocks in clumps of 3 
+    // adds StoneBlocks in clumps 
     public void StoneBlocks(int xStart, int yStart, int number)
     {
         StoneBlock stoneBlock = new StoneBlock();

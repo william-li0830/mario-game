@@ -18,7 +18,7 @@ public class TitleScreen extends World
         GreenfootImage bg = new GreenfootImage("Title Screen.jpg");
         bg.scale(600, 400);
         setBackground(bg);
-        
+
         prepare();
     }
 
@@ -30,5 +30,5 @@ public class TitleScreen extends World
         addObject(new Clouds(),587,176);
 
         addObject(new StartButton(), 300 , 234); //starts the game
-}
+    }
 }

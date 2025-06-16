@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level4 here.
+ * ssssWrite a description of class Level4 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -25,8 +25,8 @@ public class Level4 extends Level
 
         addObject(new Goomba(), 100, 370);
         addObject(new Koopa(), 428,356);
-        //addObject(new Paratroopa(),420,356);
+        //TODO: addObject(new Paratroopa(),420,356);
 
-        addObject(new Pipe(), 594, 360);
+        addObject(new Pipe(), 500, 210);
     }
 }
