@@ -14,6 +14,9 @@ public class LevelManager extends Actor
     public static Mario mario;            // Static so the same Mario is carried over from previous level to the next(including health)
     public static Scoreboard scoreboard;  // Static so that the score doesn't reset every level
 
+    // Array to store score increments per level
+    private static int[] scoreIncrements = { 10, 20, 30, 40, 50 };
+
     // Starts the game on level 1, initialize scoreboard and Mario
     public static void startGame() {
         scoreboard = new Scoreboard(0);
@@ -35,24 +38,23 @@ public class LevelManager extends Actor
      */
     public static void advanceLevel()
     {
+        if (currentLevel > 0 && currentLevel <= scoreIncrements.length) {
+            scoreboard.update(scoreIncrements[currentLevel - 1]);
+        }
+
         if (currentLevel == 1) {
             currentLevel++;
-            scoreboard.update(10);
             Greenfoot.setWorld(new Level2(mario));
         } else if (currentLevel == 2) {
             currentLevel++;
-            scoreboard.update(20);
             Greenfoot.setWorld(new Level3(mario));
         } else if (currentLevel == 3) {
             currentLevel++;
-            scoreboard.update(30);
             Greenfoot.setWorld(new Level4(mario));
         } else if (currentLevel == 4) {
             currentLevel++;
-            scoreboard.update(40);
             Greenfoot.setWorld(new Level5(mario));
         } else if (currentLevel == 5) {
-            scoreboard.update(50);
             Greenfoot.setWorld(new EndScreen());
         } 
     }

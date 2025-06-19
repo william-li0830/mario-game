@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.target=LevelManager
-comment0.text=\r\n\ Manages\ the\ game's\ levels,\ Mario\ character,\ and\ scoreboard\r\n\ \r\n\ The\ same\ Mario\ and\ scoreboard\ are\ used\ across\ levels\ to\ carry\ over\ health\ and\ score\r\n\ \r\n
+comment0.text=\r\n\ Manages\ the\ game's\ levels,\ Mario\ character,\ and\ scoreboard\r\n\ \r\n\ The\ same\ Mario\ and\ scoreboard\ are\ used\ across\ levels\ to\ carry\ over\ health\ and\r\n\ score\r\n\ \r\n
 comment1.params=
 comment1.target=void\ startGame()
 comment2.params=
 comment2.target=Scoreboard\ getScoreboard()
 comment3.params=
 comment3.target=void\ advanceLevel()
-comment3.text=\r\n\ My\ sister\ helped\ me\ with\ this\ \r\n\ \r\n\ Advances\ to\ the\ next\ level,\ updating\ the\ score\ and\ loading\ the\ new\ world.\r\n\ Ends\ the\ game\ after\ the\ last\ level.\r\n
+comment3.text=\r\n\ My\ sister\ helped\ me\ with\ this\r\n\ \r\n\ Advances\ to\ the\ next\ level,\ updating\ the\ score\ and\ loading\ the\ new\ world.\r\n\ Ends\ the\ game\ after\ the\ last\ level.\r\n
 numComments=4
