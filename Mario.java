@@ -135,16 +135,6 @@ public class Mario extends Actor
         }
     }
     
-    public static void main(String[] args) {
-        String[] skins = {"Default", "Red", "Blue", "Green"};
-        int currentSkinIndex = 0;
-
-        for (int i = 0; i < 10; i++) {
-            System.out.println("Current skin: " + skins[currentSkinIndex]);
-            currentSkinIndex = (currentSkinIndex + 1) % skins.length;
-        }
-    }
-
     // helper method to ensure you we never run an animation array out of bounds
     public void checkAnimationBounds()
     {
