@@ -5,7 +5,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 
 public class StartButton extends Actor
-{
+
+{ 
+    // I added the start button and once pressed it starts the game
     /**
      * Act - do whatever the StartButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

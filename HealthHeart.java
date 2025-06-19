@@ -5,4 +5,5 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HealthHeart extends Actor
 {
+    //I created/added health hearts
 }

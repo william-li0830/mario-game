@@ -6,6 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EndScreen extends World
 {
+    //I added the End screen to your code
+    
     private Text thankYouForPlaying;
 
     /**
@@ -33,5 +35,7 @@ public class EndScreen extends World
         Scoreboard scoreboard = LevelManager.getScoreboard();
         Text yourScore = new Text("YOUR SCORE: " + scoreboard.getScore(), Color.RED,40);
         addObject(yourScore, centerX, centerY + 50);
+        
+        addObject(new PeaceMario(), 428,356);
     }
 }

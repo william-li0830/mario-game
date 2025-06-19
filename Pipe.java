@@ -5,6 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pipe extends Platform
 { 
+    // I used the pipe so Mario can teleport to the next level(before there was no pipe in the game but I took advantage of the pipe image in this project folder)
     public void act()
     {
         topChecker();

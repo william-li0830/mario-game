@@ -7,6 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Scoreboard extends Actor
 {
+    //I created the scoreboard class
+    
     private int fontSize, score;
     private Color textColor, backColor;
     private String text;

@@ -6,6 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 
 public class Coin extends Actor {
+    // I added the coin to the game(before it was just and image in the project folder not being used)
+
     private int speed = -8;
     private int gravity = 1;
     private int originalY;

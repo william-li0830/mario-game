@@ -5,6 +5,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 
 public class Clouds extends Actor
+
 {
+    // I added the clouds to the Title Screen(used the cloud image from the project folder)
 }
  

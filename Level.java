@@ -7,6 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Level extends World
 {
+    // I created/added all levels(1-5) to your code
+    
     protected static final int BLOCK_SIZE = 28;
 
     private Scoreboard scoreboard;

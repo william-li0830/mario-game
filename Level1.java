@@ -21,6 +21,6 @@ public class Level1 extends Level
 
         addObject(new Bush(),200,370);
         addObject(new Pipe(), 594, 360);
-
     }
+    
 }

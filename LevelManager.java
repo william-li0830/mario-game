@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class LevelManager extends Actor
 {
+    // I addded a level manager class to manage game levels
+    
     public static int currentLevel = 1;
     public static Mario mario;            // Static so the same Mario is carried over from previous level to the next(including health)
     public static Scoreboard scoreboard;  // Static so that the score doesn't reset every level

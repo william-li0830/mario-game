@@ -5,6 +5,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Goomba extends Enemy
 {
+    // I added anohter enemy(Goomba) to the game/code
+    
     private static int SPEED = 1;
     private static int SCORE = 3;
     private boolean isTouched = false;

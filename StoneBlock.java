@@ -12,6 +12,6 @@ public class StoneBlock extends Platform
      */
     public void act()
     {
-        // Add your action code here.
+        // I added a new block platform(a stone block)
     }
 }

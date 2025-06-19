@@ -5,7 +5,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (William Li)
  */
 public class Text extends Actor
-{
+
+{ 
+    // I created the timer class
     GreenfootImage TextImage;
     Color color;
     int size;

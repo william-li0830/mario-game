@@ -6,6 +6,8 @@ import greenfoot.*;
  */
 public class CoinBlock extends Platform
 {
+    //I used the coin block to spill out coins(before it was just a block that couldn't do anything when hit)
+
     private int coins;
 
     public CoinBlock() {
