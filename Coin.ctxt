@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Coin
+comment0.text=\r\n\ A\ Coin\ that\ pops\ up\ and\ falls\ back\ down\ due\ to\ gravity.\r\n\ Disappears\ after\ returning\ to\ its\ original\ position.\r\n
+comment1.params=world
+comment1.target=void\ addedToWorld(greenfoot.World)
+comment2.params=
+comment2.target=void\ act()
+numComments=3

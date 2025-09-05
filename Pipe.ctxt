@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Pipe
+comment0.text=\r\n\ A\ Pipe\ platform\ that\ Mario\ can\ enter\ to\ advance\ to\ the\ next\ level.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ topChecker()
+numComments=3

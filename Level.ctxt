@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Level
+comment0.text=\r\n\ Abstract/super\ class\ for\ game\ levels\r\n\ Initializes\ shared\ components\ to\ the\ world\r\n\ Handles\ game\ timer,\ Mario\ health\ display\ and\ game\ over\ logic\r\n
+comment1.params=mario
+comment1.target=Level(Mario)
+comment10.params=
+comment10.target=void\ gameOver()
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ addFloor()
+comment5.params=xStart\ yStart\ number
+comment5.target=void\ CoinBlocks(int,\ int,\ int)
+comment6.params=xStart\ yStart\ number
+comment6.target=void\ Blocks(int,\ int,\ int)
+comment7.params=xStart\ yStart\ number
+comment7.target=void\ StoneBlocks(int,\ int,\ int)
+comment8.params=number\ xStart\ yStart
+comment8.target=void\ HealthHearts(int,\ int,\ int)
+comment9.params=
+comment9.target=void\ checkTimer()
+numComments=11
