@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Level5
+comment0.text=\r\n\ Level\ 5\ of\ the\ game.\r\n
+comment1.params=mario
+comment1.target=Level5(Mario)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Level5.\r\n\ \r\n
+numComments=2

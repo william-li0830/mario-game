@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Goomba
+comment0.text=\r\n\ A\ Goomba\ enemy\ that\ moves,\ can\ be\ flattened\ by\ Mario,\ and\ gives\ points\ when\r\n\ defeated.\r\n
+comment1.params=
+comment1.target=Goomba()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ fadeAndRemove()
+comment4.params=
+comment4.target=void\ checkSpeed()
+comment5.params=
+comment5.target=void\ flattenGoomba()
+comment6.params=
+comment6.target=boolean\ isFlattened()
+numComments=7
